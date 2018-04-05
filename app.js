@@ -17,15 +17,12 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 /* redirect & static link */
-// for http
-app.set('views',path.join(__dirname,'client/views'));
-/* For extension
-app.use(express.static(path.join(__dirname,'client/elements')));
-app.use(express.static(path.join(__dirname,'client/images')));
-app.use(express.static(path.join(__dirname,'client/css')));
-app.use(express.static(path.join(__dirname,'client/js')));
-app.use(express.static(path.join(__dirname,'client/lib')));
-*/
+/* For extension */
+app.use(express.static(path.join(__dirname,'public/elements')));
+app.use(express.static(path.join(__dirname,'public/images')));
+app.use(express.static(path.join(__dirname,'public/css')));
+app.use(express.static(path.join(__dirname,'public/js')));
+app.use(express.static(path.join(__dirname,'public/lib')));
 
 /* ssl usage
 var options = {
