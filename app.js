@@ -9,7 +9,9 @@ const bodyParser = require('body-parser');
 // const { "core" } = require('./server/*');
 
 const app = express();
+// using 2 type of render engine (pug/ejs)
 app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({
 	extended: true
