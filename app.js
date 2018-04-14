@@ -7,7 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 /* core */
 // const { "core" } = require('./server/*');
-
+const routes = require('./routes/urls');
 const app = express();
 // using 2 type of render engine (pug/ejs)
 app.set('view engine', 'ejs');
@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname,'public/css')));
 app.use(express.static(path.join(__dirname,'public/js')));
 app.use(express.static(path.join(__dirname,'public/lib')));
 
+app.use('/',routes);
 /* ssl usage
 var options = {
     key: fs.readFileSync(path.join('/','var','www','sslforfree','private.key')),
@@ -37,7 +38,6 @@ var options = {
 /* Need to separate "Secure service" & "Download Service" */
 // const secure_server = https.createServer(options,app_s);
 const server = http.createServer(app);
-
 /* Both (Secure & Download), often for testbed or introduction */
 // core.init(app);
 
